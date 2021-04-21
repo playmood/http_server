@@ -21,7 +21,7 @@ class sem
         {
             if(sem_init(&p_sem, 0, num) != 0)
             {
-                throw std::exception;
+                throw std::exception();
             }
         }
         ~sem()
@@ -89,7 +89,7 @@ class cond
         {
             pthread_cond_destroy(&p_cond);
         }
-        bool wait(pthread_cond_t *p_mutex)
+        bool wait(pthread_mutex_t *p_mutex)
         {
             int ret = 0;
             //pthread_mutex_lock(&p_mutex);

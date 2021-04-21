@@ -1,0 +1,19 @@
+{
+    "files.associations": {
+        "*.tcc": "c",
+        "deque": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "array": "cpp",
+        "list": "cpp",
+        "cerrno": "cpp",
+        "exception": "cpp",
+        "fstream": "cpp",
+        "iosfwd": "cpp",
+        "new": "cpp",
+        "ostream": "cpp",
+        "sstream": "cpp",
+        "streambuf": "cpp",
+        "cassert": "c"
+    }
+}
