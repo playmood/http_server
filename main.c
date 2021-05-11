@@ -18,7 +18,7 @@
 
 #define MAX_FD 65536           //最大文件描述符
 #define MAX_EVENT_NUMBER 10000 //最大事件数
-#define TIMESLOT 5             //最小超时单位
+#define TIMESLOT 6             //最小超时单位
 
 #define SYNLOG  //同步写日志
 //#define ASYNLOG //异步写日志
@@ -154,7 +154,7 @@ int main(int argc, char *argv[])
     addfd(epollfd, listenfd, false);
     http_conn::m_epollfd = epollfd;
 
-    //创建管道
+    //创建管道，服务于信号接受
     ret = socketpair(PF_UNIX, SOCK_STREAM, 0, pipefd);
     assert(ret != -1);
     setnonblocking(pipefd[1]);
