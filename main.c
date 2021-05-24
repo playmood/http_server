@@ -20,8 +20,8 @@
 #define MAX_EVENT_NUMBER 10000 //最大事件数
 #define TIMESLOT 6             //最小超时单位
 
-#define SYNLOG  //同步写日志
-//#define ASYNLOG //异步写日志
+//#define SYNLOG  //同步写日志
+#define ASYNLOG //异步写日志
 
 //#define listenfdET //边缘触发非阻塞
 #define listenfdLT //水平触发阻塞

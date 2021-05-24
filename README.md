@@ -40,3 +40,16 @@ make server
 ./server port
 ```
 - 浏览器端访问ip:port即可
+
+# GUI
+
+```python
+doc_path = '/home/playmood/' # 修改变量为http_server所在的目录
+```
+
+- 运行
+
+```shell
+python3 GUI.py
+```
+

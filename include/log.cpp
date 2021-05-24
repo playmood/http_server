@@ -4,6 +4,7 @@
 #include <stdarg.h>
 #include "log.h"
 #include <pthread.h>
+#include <iostream>
 using namespace std;
 
 Log::Log()
@@ -137,17 +138,18 @@ void Log::write_log(int level, const char *format, ...)
     m_buf[n + m] = '\n';
     m_buf[n + m + 1] = '\0';
     log_str = m_buf;
-
     m_mutex.unlock();
 
     if (m_is_async && !m_log_queue->full())
     {
         m_log_queue->push(log_str);
+        cout<<log_str<<'\n';
     }
     else
     {
         m_mutex.lock();
         fputs(log_str.c_str(), m_fp);
+        cout<<log_str<<'\n';
         m_mutex.unlock();
     }
 
